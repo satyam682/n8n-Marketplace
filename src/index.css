@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-neo-white: #ffffff;
+  --color-neo-black: #000000;
+  --color-neo-gray: #f0f0f0;
+  
+  --shadow-neo: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-neo-lg: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-neo-sm: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+@layer base {
+  body {
+    @apply bg-neo-white text-neo-black;
+  }
+}
+
+@layer components {
+  .neo-border {
+    @apply border-4 border-neo-black;
+  }
+  
+  .neo-shadow {
+    @apply shadow-neo;
+  }
+  
+  .neo-shadow-lg {
+    @apply shadow-neo-lg;
+  }
+  
+  .neo-card {
+    @apply bg-neo-white border-4 border-neo-black shadow-neo transition-all;
+  }
+  
+  .neo-card:hover {
+    @apply translate-x-[-2px] translate-y-[-2px] shadow-neo-lg;
+  }
+  
+  .neo-input {
+    @apply border-4 border-neo-black px-4 py-2 focus:outline-none focus:ring-0 focus:bg-neo-gray transition-colors;
+  }
+  
+  .neo-button-primary {
+    @apply bg-neo-black text-neo-white border-4 border-neo-black font-black uppercase tracking-widest px-6 py-3 shadow-neo hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg active:translate-x-[0px] active:translate-y-[0px] active:shadow-neo transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .neo-button-secondary {
+    @apply bg-neo-white text-neo-black border-4 border-neo-black font-black uppercase tracking-widest px-6 py-3 shadow-neo hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg active:translate-x-[0px] active:translate-y-[0px] active:shadow-neo transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
